@@ -1,0 +1,97 @@
+\begin{thebibliography}{}
+\itemsep0pt
+
+\bibitem[Bakulin and Calvert, 2006]{baku06}
+Bakulin, A., and R. Calvert,  2006, The virtual source method: Theory and case
+  study: Geophysics, {\bf 71}, SI139--SI150.
+
+\bibitem[Blanch and Symes, 1995]{blanch95b}
+Blanch, J.~O., and W.~W. Symes,  1995, 171, {\it in} Efficient iterative
+  viscoacoustic linearized inversion:  627--630.
+
+\bibitem[Derode et~al., 2003]{derode03b}
+Derode, A., E. Larose, M. Campillo, and M. Fink,  2003, How to estimate the
+  green’s function of a heterogeneous medium between two passive sensors?
+  application to acoustic waves: Applied Physics Letters, {\bf 83}, 3054--3056.
+
+\bibitem[Eisner et~al., 2011]{eisner11}
+Eisner, L., M. Thornton, and J. Griffin,  2011, Challenges for microseismic
+  monitoring: SEG Technical Program Expanded Abstracts, Soc. Expl. Geophys.,
+  1519--1523.
+
+\bibitem[Fink, 2006]{fink06}
+Fink, M.,  2006, Time-reversal acoustics in complex environments: Geophysics,
+  {\bf 71}, SI151--SI164.
+
+\bibitem[Gosselet and Singh, 2007]{gosselet07}
+Gosselet, A., and S.~C. Singh,  2007, Using symmetry breaking in
+  time‐reversal mirror for attenuation determination: SEG Technical Program
+  Expanded Abstracts, Soc. Expl. Geophys., 1639--1643.
+
+\bibitem[Hu and McMechan, 1988]{huMcMechan88}
+Hu, L., and G.~A. McMechan,  1988, Elastic finite-difference modelling and
+  imaging for earthquake sources: Geophysical Journal, {\bf 95}, 303--313.
+
+\bibitem[Kawakatsu and Montagner, 2008]{kaw08}
+Kawakatsu, H., and J.~P. Montagner,  2008, Time-reversal seismic-source imaging
+  and moment-tensor inversion: Geophysical Journal International, {\bf 175},
+  686--688.
+
+\bibitem[Kjartansson, 1979]{kja79}
+Kjartansson, E.,  1979, Constant-{Q} wave propagation and attenuation: Journal
+  of Geophysical Research, {\bf 84}, 4737--4748.
+
+\bibitem[Kremers et~al., 2011]{kremers11}
+Kremers, S., A. Fichtner, G.~B. Brietzke, H. Igel, C. Larmat, L. Huang, and M.
+  K\"aser,  2011, Exploring the potentials and limitations of the time-reversal
+  imaging of finite seismic sources: Solid Earth, {\bf 2}, 95--105.
+
+\bibitem[Norville and Waymond, 2007]{norville07}
+Norville, P.~D., and S.~R. Waymond,  2007, Time-reversal focusing of elastic
+  surface waves with an asymmetric surface layer: The Journal of the Acoustical
+  Society of America, {\bf 122}, EL95--EL100.
+
+\bibitem[Saenger, 2011]{saenger11}
+Saenger, E.~H.,  2011, Time reverse characterization of sources in
+  heterogeneous media: Independent Nondestructive Testing and Evaluation
+  International, {\bf 44}, 751 -- 759.
+
+\bibitem[Snieder, 2007]{snieder07}
+Snieder, R.,  2007, Extracting the green’s function of attenuating
+  heterogeneous acoustic media from uncorrelated waves: The Journal of the
+  Acoustical Society of America, {\bf 121}, 2637--2643.
+
+\bibitem[Steiner et~al., 2008]{steiner08}
+Steiner, B., E.~H. Saenger, and S.~M. Stefan,  2008, Time reverse modeling of
+  low-frequency microtremors: Application to hydrocarbon reservoir
+  localization: Geophysical Research Letters, {\bf 35}, n/a--n/a.
+
+\bibitem[Tarantola, 1988]{tarantola88}
+Tarantola, A.,  1988, Theoretical background for the inversion of seismic
+  waveforms including elasticity and attenuation: pure and applied geophysics,
+  {\bf 128}, 365--399.
+
+\bibitem[Zhang et~al., 2010]{zhang10}
+Zhang, Y., P. Zhang, and H. Zhang,  2010, Compensating for viscoacoustic
+  effects in reverse-time migration: 80th Ann. Internat. Mtg, Soc. of Expl.
+  Geophys., 3160--3164.
+
+\bibitem[Zhu, 2014]{zhu14b}
+Zhu, T.,  2014, Time-reverse modelling of acoustic wave propagation in
+  attenuating media: Geophysical Journal International, {\bf 197}, 483--494.
+
+\bibitem[Zhu and Carcione, 2014]{zhu14c}
+Zhu, T., and J.~M. Carcione,  2014, Theory and modelling of constant-q p- and
+  s-waves using fractional spatial derivatives: Geophysical Journal
+  International, {\bf 196}, 1787--1795.
+
+\bibitem[Zhu and Harris, 2014]{zhu14a}
+Zhu, T., and J.~M. Harris,  2014, Modeling acoustic wave propagation in
+  heterogeneous attenuating media using decoupled fractional {L}aplacians:
+  Geophysics, {\bf 79}, T105--T116.
+
+\bibitem[Zhu et~al., 2014]{zhu14d}
+Zhu, T., J.~M. Harris, and B. Biondi,  2014, Q-compensated reverse-time
+  migration: Geophysics, {\bf 79}, S77--S87.
+
+\end{thebibliography}

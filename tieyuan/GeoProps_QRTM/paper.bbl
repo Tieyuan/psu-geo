@@ -1,0 +1,78 @@
+\begin{thebibliography}{}
+\itemsep0pt
+
+\bibitem[Carcione, 2010]{carcione2010}
+Carcione, J.~M.,  2010, A generalization of the {F}ourier pseudospectral
+  method: Geophysics, {\bf 75}, A53--A56.
+
+\bibitem[Carcione et~al., 2002]{carcione2002}
+Carcione, J.~M., F. Cavallini, F. Mainardi, and A. Hanyga,  2002, Time-domain
+  seismic modeling of constant-{Q} wave propagation using fractional
+  derivatives: Pure and Applied Geophysics, {\bf 159}, 1719--1736.
+
+\bibitem[Carcione et~al., 1988]{carcione1988}
+Carcione, J.~M., D. Kosloff, and R. Kosloff,  1988, Wave propagation simulation
+  in a linear viscoelastic medium: Geophysical Journal, {\bf 95}, 597--611.
+
+\bibitem[Chattopadhyay and McMechan, 2008]{chatt2008}
+Chattopadhyay, S., and G.~A. McMechan,  2008, Imaging conditions for prestack
+  reverse-time migration: Geophysics, {\bf 73}, S81--S89.
+
+\bibitem[Claerbout, 1971]{claerbout1971}
+Claerbout, J.~F.,  1971, Toward a unified theory of reflector mapping:
+  GEOPHYSICS, {\bf 36}, 467--481.
+
+\bibitem[Deng and McMechan, 2007]{Deng2007}
+Deng, F., and G. McMechan,  2007, True-amplitude prestack depth migration:
+  Geophysics, {\bf 72}, S155--S166.
+
+\bibitem[Deng and McMechan, 2008]{Deng2008}
+--------, 2008, Viscoelastic true-amplitude prestack reverse-time depth
+  migration: Geophysics, {\bf 73}, S143--S155.
+
+\bibitem[Fletcher et~al., 2012]{Fletcher2012}
+Fletcher, R., D. Nichols, and M. Cavalca,  2012, Wavepath-consistent effective
+  q estimation for q-compensated reverse-time migration: Presented at the 74th
+  EAGE Conference and Exhibition incorporating, EAGE.
+
+\bibitem[Kjartansson, 1979]{kja79}
+Kjartansson, E.,  1979, Constant-{Q} wave propagation and attenuation: Journal
+  of Geophysical Research, {\bf 84}, 4737--4748.
+
+\bibitem[Mittet, 2007]{Mittet2007}
+Mittet, R.,  2007, A simple design procedure for depth extrapolation operators
+  that compensate for absorption and dispersion: Geophysics, {\bf 72},
+  S105--S112.
+
+\bibitem[Mittet et~al., 1995]{Mittet1995}
+Mittet, R., R. Sollie, and K. Hokstad,  1995, Prestack depth migration with
+  compensation for absorption and dispersion: Geophysics, {\bf 60}, 1485--1494.
+
+\bibitem[Wang, 2002]{wang2002}
+Wang, Y.,  2002, A stable and efficient approach of inverse q filtering:
+  Geophysics, {\bf 67}, 657--663.
+
+\bibitem[Zhang and Wapenaar, 2002]{Zhang2002}
+Zhang, J., and K. Wapenaar,  2002, Wavefield extrapolation and prestack depth
+  migration in anelastic inhomogeneous media: Geophysical Prospecting, {\bf
+  50}, 629--643.
+
+\bibitem[Zhu, 2014]{zhu14b}
+Zhu, T.,  2014, Time-reverse modelling of acoustic wave propagation in
+  attenuating media: Geophysical Journal International, {\bf 197}, 483--494.
+
+\bibitem[Zhu et~al., 2013]{zhu13}
+Zhu, T., J.~M. Carcione, and J.~M. Harris,  2013, Approximating constant-{Q}
+  seismic propagation in the time domain: Geophysical Prospecting, {\bf 61},
+  931--940.
+
+\bibitem[Zhu and Harris, 2014]{zhu14a}
+Zhu, T., and J.~M. Harris,  2014, Modeling acoustic wave propagation in
+  heterogeneous attenuating media using decoupled fractional {L}aplacians:
+  Geophysics, {\bf 79}, T105--T116.
+
+\bibitem[Zhu et~al., 2014]{zhu14d}
+Zhu, T., J.~M. Harris, and B. Biondi,  2014, Q-compensated reverse-time
+  migration: Geophysics, {\bf 79}, S77--S87.
+
+\end{thebibliography}

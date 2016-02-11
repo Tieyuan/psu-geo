@@ -1,0 +1,30 @@
+from rsf.tex import*
+import os, sys
+#os.environ['PSTEXPENOPTS']='color=y fat=3 fatmult=1.5 serifs=n'
+
+#env=Environment()
+#if sys.platform == 'darwin':
+#    env['ENV']['PATH'] = ':'.join(['/opt/local/bin',env['ENV']['PATH']])
+
+### For EAGE
+#Paper('orthoeage',lclass='mad15',use='amsmath,subfigure')
+
+### For Geophysics
+#Paper('scatter',lclass='geophysics',options='manuscript',use='amsmath,listings')
+
+### For SEG abs
+Paper('scatter',lclass='segabs',use='amsmath,listings')
+
+#Paper('ortho_revise1',lclass='geophysics',options='manuscript,revised',use='amsmath')
+#Command('ortho_revise_plain1.tex','ortho_revise1.tex','cp $SOURCE $TARGET')
+#Paper('ortho_revise_plain1',lclass='geophysics',options='manuscript',use='amsmath')
+
+#Paper('ortho_revise2',lclass='geophysics',options='manuscript,revised',use='amsmath')
+#Command('ortho_revise_plain2.tex','ortho_revise2.tex','cp $SOURCE $TARGET')
+#Paper('ortho_revise_plain2',lclass='geophysics',options='manuscript',use='amsmath')
+
+Paper('reply1',use='hyperref,listings')
+Paper('reply2',use='hyperref,listings')
+
+
+End(options='manuscript',use='amsmath,subfigure,listings')

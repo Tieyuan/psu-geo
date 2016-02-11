@@ -1,0 +1,60 @@
+\begin{thebibliography}{}
+\itemsep0pt
+
+\bibitem[Caputo and Mainardi, 1971]{Caputo1971}
+Caputo, M., and F. Mainardi,  1971, A new dissipation model based on memory
+  mechanism: Pure and Applied Geophysics, {\bf 91}, 134--147.
+
+\bibitem[Carcione, 2009]{carcione2009}
+Carcione, J.~M.,  2009, Theory and modeling of constant-{Q} {P}- and {S}-waves
+  using fractional time derivatives: Geophysics, {\bf 74}, T1--11.
+
+\bibitem[Carcione et~al., 2002]{carcione2002}
+Carcione, J.~M., F. Cavallini, F. Mainardi, and A. Hanyga,  2002, Time-domain
+  seismic modeling of constant-{Q} wave propagation using fractional
+  derivatives: Pure and Applied Geophysics, {\bf 159}, 1719--1736.
+
+\bibitem[Carcione et~al., 2003]{carcione2003}
+Carcione, J.~M., K. Helbig, and H.~B. Helle,  2003, Effects of pressure and
+  saturating ﬂuid on wave velocity and attenuation of anisotropic rocks: Int.
+  J. Rock Mech. Min. Sci., {\bf 40}, 389--403.
+
+\bibitem[Carcione et~al., 1988]{carcione1988}
+Carcione, J.~M., D. Kosloff, and R. Kosloff,  1988, Wave propagation simulation
+  in a linear viscoelastic medium: Geophysical Journal, {\bf 95}, 597--611.
+
+\bibitem[Dvorkin and Mavko, 2006]{dvorkin2006}
+Dvorkin, J.~P., and G. Mavko,  2006, Modeling attenuation in reservoir and
+  nonreservior rock: The Leading Edge, {\bf 25}, 194--197.
+
+\bibitem[Kjartansson, 1979]{kja79}
+Kjartansson, E.,  1979, Constant-{Q} wave propagation and attenuation: Journal
+  of Geophysical Research, {\bf 84}, 4737--4748.
+
+\bibitem[McDonal et~al., 1958]{McDonal1958}
+McDonal, F.~J., F.~A. Angona, R.~L. Mills, R.~L. Sengbush, R.~G. van Nostrand,
+  and J.~E. White,  1958, Attenuation of shear and compressional waves in
+  pierre shale: Geophysics, {\bf 23}, 421--439.
+
+\bibitem[Podlubny, 1999]{Podlubny1999}
+Podlubny, I.,  1999, {Fractional Differential Equations}: Academic Press.
+
+\bibitem[Zhu, 2014]{zhu14b}
+Zhu, T.,  2014, Time-reverse modelling of acoustic wave propagation in
+  attenuating media: Geophysical Journal International, {\bf 197}, 483--494.
+
+\bibitem[Zhu, 2015]{zhu15a}
+--------, 2015, Viscoelastic time-reversal imaging: Geophysics, {\bf 80},
+  A45--A50.
+
+\bibitem[Zhu and Carcione, 2014]{zhu14c}
+Zhu, T., and J.~M. Carcione,  2014, Theory and modelling of constant-q p- and
+  s-waves using fractional spatial derivatives: Geophysical Journal
+  International, {\bf 196}, 1787--1795.
+
+\bibitem[Zhu and Harris, 2014]{zhu14a}
+Zhu, T., and J.~M. Harris,  2014, Modeling acoustic wave propagation in
+  heterogeneous attenuating media using decoupled fractional {L}aplacians:
+  Geophysics, {\bf 79}, T105--T116.
+
+\end{thebibliography}

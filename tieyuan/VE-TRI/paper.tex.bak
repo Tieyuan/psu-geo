@@ -1,0 +1,153 @@
+\author{Tieyuan Zhu}
+%%%%%%%%%%%%%%%%%%%%%
+\title{Viscoelastic time-reversal imaging}
+
+\righthead{TRI}
+\lefthead{Zhu}
+%\footnote{Submitted to Geophysics}
+
+\begin{abstract}
+ The time-invariance of wave equations, an essential precondition for time-reversal imaging, is no longer valid when introducing attenuation. This paper presents a viscoelastic time-reversal imaging algorithm based on a novel viscoelastic wave equation. By reversing the sign of both the P- and S-wave loss operators, the viscoelastic wave equation becomes time-invariant for the time-reversal operation. Attenuation effects are thus compensated for during time-reversal wave propagation. I present the formulations of both viscoelastic forward modeling and time-reversal imaging. I test my imaging approach in three numerical experiments. The first experiment uses a 2D homogeneous model with full-aperture receivers to examine the time-invariance of the viscoelastic time-reversal imaging equation. Using the same model, the second experiment is used to demonstrate the method’s ability to characterize a point source. In the third experiment, I apply this method to characterize a complex source using borehole geophones. Numerical results show that the viscoelastic time-reversal imaging improves our knowledge of the source location, radiation pattern and amplitude.
+\end{abstract}
+
+\section{Introduction}
+
+Using time invariance and reciprocity properties of wave equations, time-reversal (TR) algorithms are able to retrace the recorded wave propagation path back through the medium and converge on the location of initial sources. The robustness and simplicity of time-reversal techniques make them effective tools for resolving source localization problems in numerous physical fields including seismology (e.g., Kremers et al., 2011), land-mine detection (e.g., \citealp{norville07}), non-destructive detection (e.g., \citealp{saenger11}) and acoustics (e.g., \citealp{fink06}). 
+
+When intrinsic attenuation is considered in the Earth, however, wave equations are no longer time-invariant under time-reversal \citep{fink06}. As a result, time-reversed waves that are back-propagated into such a medium under the same conditions as in a non-attenuating medium lose the property of symmetry in time. The complication of time variance can be addressed by an appropriate compensation for the intrinsic attenuation applied to the backward-propagated wavefields during TR propagation \citep{gosselet07,zhu14b}. By compensating in this way for attenuation effects during TR propagation, we should expect to reconstruct the backward-propagated wavefield in amplitude and phase and properly resolve the final focused source. 
+
+My previous work proposed to compensate for attenuation effects in the viscoacoustic TR process \cite[]{zhu14b}. Using a novel viscoacoustic wave equation that decouples attenuation and dispersion effects, viscoacoustic TR modeling become time-invariant upon reversing the sign of the P-wave loss operator. In other words, attenuation effects were compensated and the approach produced a general improvement in source magnitude and resolution. Further, the viscoacoustic TR modeling is implemented in attenuation-compensated reverse-time migration \cite[]{zhu14d} and time-reversal source imaging \cite[]{zhu14b}.
+
+Elastic TR imaging can locate a seismic source by back-propagating seismograms from receivers to find where the energy focuses. Elastic TR imaging is able to reconstruct not only the source location but also the radiation pattern (possibly the source mechanism) \cite[]{huMcMechan88,steiner08,kremers11}. Because the source mechanism is usually determined from the phase and amplitude of direct waves, neglecting attenuation may lead to incorrectly inverted source mechanisms for elastic waves \cite[]{eisner11}.
+
+In this paper, I introduce a viscoelastic TR imaging approach that can correct for both P- and S-attenuation effects. Like the viscoacoustic wave equation, this viscoelastic wave equation also has the property of decoupled attenuation-associated loss and dispersion operators for both P- and S-waves \cite[]{zhu14c}. In terms of this property, a viscoelastic TR modeling equation is formulated by reversing the sign of both P- and S-attenuation operators and therefore is time-invariant. I demonstrate these features of the viscoelastic TR approach with two synthetic models. 
+
+
+\section{Methodology}
+
+In this section, I discuss TR imaging in the framework of viscoelastic wave propagation in inhomogeneous media. First I briefly introduce the viscoelastic wave equation and then the propagation equation for TR imaging.
+\subsection{Viscoelastic forward modeling}
+The frequency-independent Q model (i.e., constant-Q model) is considered to be a practical approximate Q model for exploration seismology problems (e.g., \citealp{zhu14d}). Based on the mathematical constant-Q model \cite[]{kja79}, the 2D velocity-stress formulation of the viscoelastic wave equation is given by \cite[]{zhu14c}
+
+\begin{eqnarray}                  
+\rho \partial _t\nu _1 &=& \left (  \partial _1 \sigma_{11}+\partial _3 \sigma_{13}+f_1\right ),\label{eq:eq1}\\                   
+\rho \partial _t\nu _3 &=& \left (  \partial _1 \sigma_{13}+\partial_3 \sigma_{33}+f_3\right ),\label{eq:eq2}\\                  
+\sigma _{11} &=& \left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{33}  \right ] + \left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{33} \right ],\label{eq:eq3} \\
+\sigma _{33} &=& \left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{11}  \right ] + \left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{11} \right ],\label{eq:eq4}\\        
+\sigma _{13} &=& \left [ 2\eta _sB_s\varepsilon_{13}+2\tau _sA_s\partial _t \varepsilon_{13} \right ],\label{eq:eq5}\\              
+\epsilon _{11} &=& \partial _1 u_1,\epsilon _{33}=\partial _3 u_3,\epsilon _{13}=\frac{1}{2}\left ( \partial _3 u_1+\partial _1 u_3 \right ),\label{eq:eq6}
+\end{eqnarray}
+
+where $\rho$ is the mass density. $\nu_i$, $\sigma_i$, $\epsilon_{ij}$, and $f_i$ denote the particle velocity tensor, the stress tensor, the strain tensor and body force components, respectively. $u_i$ is the displacement and $\nu_i=\partial_tu_i$. $i$,$j$ are spatial indices. Einstein’s convention of repeated indices is assumed. And,
+
+\begin{equation}
+\label{eq:eq7}                      
+\hspace{0pt} A_{P,S}=\left ( -\Delta  \right )^{\gamma _{P,S}-1/2},B_{P,S}=\left ( -\Delta  \right )^{\gamma _{P,S}},\hspace{\linewidth minus\linewidth}
+\end{equation}
+where
+
+\begin{eqnarray}
+\label{eq:eq8}
+\tau_P = C_{\lambda} c_{P0}^{2\gamma_P-1}sin(\pi\gamma_P ),&& \eta_P=C_\lambda c_{P0}^{2\gamma_P}cos(\pi\gamma_P ),\nonumber \\
+\tau_S = C_\mu c_{S0}^{2\gamma_S-1}sin(\pi\gamma_S ),&& \eta_S=C_\mu c_{S0}^{2\gamma_S}cos(\pi\gamma_S ),\nonumber \\
+C_{\lambda}=M_{0}\omega_0^{-2\gamma_P}, && C_\mu=\mu_{0}\omega_0^{-2\gamma_S},
+\end{eqnarray}
+
+and $\omega_0$ is an arbitrary reference frequency, which should be higher than the source frequencies to guarantee pulse delay with respect to the lossless case. Also, $\gamma_{P,S}=atan(Q_{P,S}^{-1})/\pi $ , and $0<\gamma_{P,S}<0.5$ for any positive value of Q, where  $Q_P$ and $Q_S$ are the P- and S-wave quality factors, respectively. The P-wave modulus  $M_0$ and the S-wave modulus $\mu_0$  are respectively given by $M_0=\rho c_{P0}^2cos^2(atan(Q_P^{-1})/2)$ and $\mu_0=\rho c_{S0}^2cos^2(atan(Q_S^{-1})/2)$, and $c_{P0}$  and $c_{S0}$   are the P- and S-wave velocities at the reference frequency, respectively. 
+To solve the wave equation in inhomogeneous media, I use the staggered-grid finite-difference approach to discretize the time derivatives and the staggered-grid pseudospectral approach to discretize the first-order spatial derivatives. The fractional Laplacian operators are solved by the fractional Fourier pseudospectral method as shown by \cite[]{zhu14a}. 
+
+Note that the first-order time-derivative terms in equations ~\ref{eq:eq3}, ~\ref{eq:eq4}, and ~\ref{eq:eq5}correspond to attenuation-associated P- and S-wave loss operators. When $Q_{P,S}\rightarrow \infty$   $(\gamma_{P,S}\rightarrow 0 )$, the first-order time-derivative terms disappear, and equation~\ref{eq:eq1,eq2,eq3,eq4,eq5} only contain second-order time derivatives, and becomes an elastic wave equation that is time-invariant under time-reversal. When $Q_{P,S}$  is finite, this viscoelastic propagation equation contains the first-order time-derivative loss operators and,  therefore, invariance under time-reversal is lost \cite[]{fink06}. 
+
+\subsection{Viscoelastic time-reversal (TR) modeling/imaging}
+To implement TR in the time-domain wave equation mathematically, I first replace time $t$ by $–t$. Due to attenuation during forward propagation, I have to amplify amplitude during the propagation of the time-reversed wavefields. The amplification of amplitude is done by reversing the sign of the P-wave loss operator \cite[]{zhu14b}. For the viscoelastic case, I reverse the sign of both P- and S-wave loss operators. Assuming $\hat{t}=-t$ , the viscoelastic TR modeling equations with attenuation compensation are written as
+
+\begin{eqnarray}                   
+\sigma _{11} &=\left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{33}  \right ] - \left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{33} \right ],\label{eq:eq9}\\        
+\sigma _{33} &=\left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{11}  \right ] - \left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{11} \right ],\label{eq:eq10}\\
+\sigma _{13} &=2\eta _sB_s\varepsilon_{13} - 2\tau _sA_s\partial _t \varepsilon_{13},\label{eq:eq11}
+\end{eqnarray}
+
+Substituting equations~\ref{eq:eq9},~\ref{eq:eq10},and ~\ref{eq:eq11} into equation ~\ref{eq:eq1} and ~\ref{eq:eq2} (with $\hat{t}=-t $), we can see that the solution  $\nu(\mathbf{x},-t)$ of equations  ~\ref{eq:eq1}, ~\ref{eq:eq2}, ~\ref{eq:eq9},~\ref{eq:eq10},and ~\ref{eq:eq11}is the time-reversed version of the solution $\nu(\mathbf{x},t)$  of the forward modeling equations (~\ref{eq:eq1}, ~\ref{eq:eq2}, ~\ref{eq:eq3}, ~\ref{eq:eq4}, and ~\ref{eq:eq5}), where $\mathbf{x}=(x,y,z)$  . Simply, the waveform at a forward time t is physically equivalent to that at the reversed time $-t$. Therefore, the above system for time-reverse modeling becomes time-invariant.
+
+For the reverse modeling, the input data consists of two particle velocity components (vertical and horizontal). No body force is present throughout the time-reversal propagation, i.e.,$f_i=0$ . The recorded particle velocity components are reversed in time and enforced as the Dirichlet boundary condition at receivers; mathematically they are expressed as
+\begin{eqnarray}
+\label{eq:eq12}  
+ \nu_1(\mathbf{x}_r,-t)=\nu_x(T-t),\\
+\nu_3(\mathbf{x}_r,t)=\nu_z(T-t)
+\end{eqnarray}
+Here $\nu_x$ and $\nu_z$ are the recorded horizontal and vertical particle velocity components at the receivers. T is the total recorded time. The receiver location coordinate in 2D is $\mathbf{x}_r=(x_r,z_r)$ .
+In practice, the higher frequencies in the recorded data are invariably contaminated with noise. Attenuation compensation during TR propagation will amplify such unwanted frequency content. To prevent high-frequency noise from growing exponentially, I apply a low-pass filter in the spatial frequency domain to the right-hand-side attenuation-associated loss and dispersion operators in equations~\ref{eq:eq9}, ~\ref{eq:eq10}, and ~\ref{eq:eq11} when calculating the time-reversed wavefields. The filter should not be applied to the propagation operators. Equations~\ref{eq:eq9}, ~\ref{eq:eq10}, and ~\ref{eq:eq11} become
+
+\begin{eqnarray}                     
+\sigma _{11}=\Omega +\mathbf F\left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{33} -\Omega \right ] - \mathbf F\left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{33} \right ],\label{eq:eq13} \\                     
+\sigma _{33}=\Psi+\mathbf F\left [ \eta _pB_p(\varepsilon_{11}+\varepsilon_{33} )-2\eta _sB_s\varepsilon_{11} -\Psi \right ] - \mathbf F\left [ \tau _pA_p\partial _t (\varepsilon_{11}+\varepsilon_{33} )-2\tau _sA_s\partial _t \varepsilon_{11} \right ],\label{eq:eq14} \\             
+\sigma _{13}=\Theta + \mathbf F \left [ 2\eta _sB_s\varepsilon_{13} - \Theta \right ] - \mathbf F \left [ 2\tau _sA_s\partial _t \varepsilon_{13}\right ],\label{eq:eq15} 
+\end{eqnarray}
+
+where the symbol ‘$\mathbf F$’ indicates the designed filter in the wavenumber domain since these equations are discretized by the pseudospectral method. The first bracket in the right hand side (RHS) represents the attenuation-associated dispersion and the second represents the loss. And, the propagation operators are 
+\begin{equation}
+\label{eq:eq16}                      
+\hspace{0pt} \Omega = C_\lambda (\varepsilon_{11}+\varepsilon_{33} ) - 2C_\mu\varepsilon_{33}, \Psi=C_\lambda (\varepsilon_{11}+\varepsilon_{33} ) - 2C_\mu\varepsilon_{11},  \Theta = 2C_\mu\varepsilon_{13}.\hspace{\linewidth minus\linewidth}
+\end{equation}
+Note that, if no attenuation, the last two terms in RHS of equations~\ref{eq:eq13}, ~\ref{eq:eq14}, and ~\ref{eq:eq15} disappear. Thus, equations~\ref{eq:eq13}, ~\ref{eq:eq14}, and ~\ref{eq:eq15} become elastic. A Tukey window shaped filter was chosen in the numerical examples. The cutoff wavenumber is calculated by the cutoff frequency divided by the maximum velocity of the medium \cite[]{zhu14b}.
+The particle velocity and stress components are determined and stored at every time step and every computational grid within this viscoelastic forward and TR modeling algorithm. I choose the maximum value of sum of the stress tensor as an imaging condition \cite[]{saenger11}. This imaging condition is written as:
+
+\begin{equation}
+\label{eq:eq17}                      
+\hspace{0pt} Image=max\sum_{i,j}\sigma _{ij}(\mathbf x, t).\hspace{\linewidth minus\linewidth}
+\end{equation}
+
+\section{Synthetic examples}
+
+In my first example, I use my viscoelastic TR modeling approach to characterize a point source in a 2D homogeneous model. The P-wave velocity is $2500$ m/s, the S-wave velocity is $1500$ m/s, the density is $2200 kg/m_3$, $Qp=40$, and $Qs=20$. The model is discretized with $256\times 256$  grid points. The grid spacing of the horizontal and vertical axes are $\Delta x=\Delta z=6$ m. The source is at the origin point. Its center frequency is $25$ Hz with a time delay of $0.04$ s. The time step is  s. The horizontal and vertical particle velocities are recorded through time with $400$ receivers, which are located in a circle with radius $600$ m centered at the source (Figure~\ref{fig:Fig1}).
+
+\sideplot{Fig1}{width=0.9\textwidth}{The source-receiver geometry for the first and second numerical experiments. The red star at the origin indicates the source. The open triangles indicate the receiver boundary. The filled triangles indicated two reference points. This example is in two dimensions. The coordinates of A and B are $(150, 100)$ m and $(-150, -200)$ m. Every tenth receiver is shown for clarity.}
+
+
+I generated synthetic viscoelastic data with a horizontal single force. Then I ran both elastic and viscoelastic TR imaging approaches. The Tukey filter was chosen with a cutoff frequency of $120$ Hz and a taper ratio of $0.4$. As a reference image, I also ran elastic TR imaging with simulated elastic data, i.e., without any attenuation effects. 
+
+\subsection{Wavefield reconstruction by viscoelastic TR} 
+In the first test, I show the time-invariance of the viscoelastic TR approach, i.e., that the waveform at a specified point in the computational grid can be reconstructed during viscoelastic TR propagation. Here I have two reference points A and B for all simulations in Figure~\ref{fig:Fig1}. 
+
+Figure~\ref{fig:Fig2} shows reconstructed waveforms at reference points A and B. Due to attenuation between the reference points and receivers, the waveform generated by elastic TR imaging (green line) is spread out (phase-shifted) and has reduced amplitude at both A and B compared to the reference waveform (red line). We can see that the more attenuated S-waves have larger shifts than the P-waves. Those incorrect waveforms at A and B reinforce that the attenuation breaks the time-invariance of time-reversal propagation. The reconstructed waveform by viscoelastic TR imaging with attenuation compensation (blue line) is comparable to the reference waveform in amplitude and phase for both P- and S-waves. The recovery of the waveform demonstrates the time-invariance of the TR propagation equation for the viscoelastic TR imaging. The small difference between the red and blue lines might be numerical error caused by the finite-difference discretization. 
+
+%%=======
+\plot{Fig2}{width=0.9\textwidth}{Waveforms (horizontal particle velocity component) recorded at the reference points A (top) and B (bottom). Red: waveform recorded in the forward simulation using viscoelastic forward modeling. Green: waveform reconstructed by elastic TR modeling. Blue: waveform reconstructed by viscoelastic TR modeling in this paper. The recovery of the waveform (blue) demonstrates that the equation for the viscoelastic (VE) TR imaging approach is time-invariant. The errors may be caused by the finite-difference discretization. Labels ‘P’ and ‘S’ denote P-wave and S-wave, respectively.}
+
+\subsection{Characterizing the source} 
+My second test characterizes the point source using time-reversal imaging. Figures~\ref{fig:Fig3}a, b, and c show time-reversal images in the pressure magnitude snapshot.  Three TR images give the source location and, roughly, the source area as well as the source radiation pattern. However, Figure~\ref{fig:Fig3}b gives an incorrect radiation pattern that is opposite in sign to the reference one. Using viscoelastic TR imaging, Figure~\ref{fig:Fig3}c presents not only the correct radiation pattern but also an improved source amplitude estimate. These observations can also be easily identified from the horizontal (Figure~\ref{fig:Fig3}d) and vertical (Figure ~\ref{fig:Fig3}e) cross-sections through the origin. The dominant wavelength is about $100$ m (P-wave velocity of $2500$ m/s and central frequency of $25$ Hz). The source area is sharper in Figure ~\ref{fig:Fig3}c with an adequate accuracy of 100 m or smaller (c.f. the blue lines in Figure~\ref{fig:Fig3}d and ~\ref{fig:Fig3}e). 
+
+In the third test, I apply viscoelastic TR imaging to characterize a complex source. Here I consider a downhole geometry for microseismic monitoring. The P-wave velocity and QP models are shown in Figure~\ref{fig:Fig4}. I assume $V_S = V_P/1.7$ and $QS = QP/2$. The model is discretized with   grid points. The grid spacing of the horizontal and vertical axes are  m. The source-receiver geometry is plotted in Figure ~\ref{fig:Fig4}. The injection well is assumed on the left side and the lowest velocity around depth $100$ m models the effects of fluid injection. Microseismic sources are represented by modeling 57 individual sources (vertical force) with center frequency ranging between $600$ Hz and $1000$ Hz (i.e. a Ricker wavelet). These sources are randomly distributed within the white dashed-line area in Figure~\ref{fig:Fig4}. The monitoring well is on the right. The horizontal and vertical particle velocities are recorded through time with 25 geophones deployed at depths ranging from $39$ m to $136$ m with a spacing of $4$ m.  A time step of $11$ µs was used. Elastic and viscoelastic synthetic data were generated by the viscoelastic forward modeling approach described in the above section. The Tukey filter was chosen with a cutoff frequency of $2000$ Hz and a taper ratio of $0.4$.
+
+%%===========
+\plot{Fig3}{width=0.9\textwidth}{Focused image of the horizontal force source by (a) elastic TR imaging with elastic seismograms; (b) elastic TR imaging with viscoelastic seismograms; (c) viscoelastic TR imaging with viscoelastic seismograms. Observe that elastic imaging does not even recover the correct sign of the amplitude. Horizontal (d) and vertical (e) cross-sections of focused images through the origin are compared. }
+
+
+\plot{Fig4}{width=0.9\textwidth}{P-wave velocity (a) and Qp (b) models with the receiver array in the right-hand well, with the source area indicated by the white dashed line area.}
+
+
+Figure~\ref{fig:Fig5} presents the TR imaging results of the viscoelastic data without (b, e) and with (c, f) attenuation compensation. For comparison, I also reconstructed the source location and magnitude using elastic TR modeling of elastic data, with the results appearing in panels a and d of Figure ~\ref{fig:Fig5}. It is noteworthy that without attenuation compensation the magnitude of the source is underestimated and the imaged source area is shifted about one dominant wavelength (about 5 m) from the designed source area (dashed line zone). When using viscoelastic TR modeling, the estimated source location is corrected. The source radiation pattern in Figure~\ref{fig:Fig5}f agrees with the reference in Figure 5d very well. The sharpness and magnitude of the reconstructed source is also notably improved. These observations can also be easily identified from the cross-sections at 100 m depth in Figure~\ref{fig:Fig6}. The spatial resolution has been clearly enhanced. 
+
+%%=======
+\plot{Fig5}{width=0.9\textwidth}{Source images by elastic and viscoelastic TR imaging. These images are produced by (a) elastic TR imaging with the elastic data; (b) elastic TR imaging with the viscoelastic data; (c) viscoelastic TR imaging with the viscoelastic data. The corresponding zoomed images of the source area are shown in (d), (e), and (f). The white dashed line area indicates the desired source area. These images are displayed in the same color scale. }
+
+%%========
+\sideplot{Fig6}{width=0.9\textwidth}{Cross-section of the focused source area in Figures~\ref{fig:Fig5}(d), (e) and (f). }
+
+\section{Discussion}
+The results I have presented indicate that the source location, radiation pattern and amplitude can be corrected using the viscoelastic TR imaging approach. The improvements in the source location, radiation pattern and amplitude provide hope that we may be able to invert the seismic moment tensor by viscoelastic TR source imaging \cite[]{kaw08}. There are other potential applications in seismology and exploration seismology. For example, in microseismic experiments, attenuation seriously affects the accuracy of the source location and the amplitudes of P-waves and S-waves, especially in surface recordings \cite[]{eisner11}. Attenuation corrections could increase the frequency bandwidth and improve the signal-to-noise ratio. Viscoelastic TR imaging using correct P- and S-wave attenuation promises to improve the accuracy of the microseismic source location, radiation pattern and amplitude, which provide the quantitative basis of source mechanisms. Detailed investigation of the quantitative relation between the source mechanisms and the source image by viscoelastic TR imaging is needed.
+
+It is also worth noting that the viscoelastic TR modeling approach can also reconstruct the propagated wavefied at any arbitrary point in attenuating media. A direct application is the use of the viscoelastic TR approach for prestack viscoelastic reverse-time migration to reconstruct the receiver wavefield. The reconstructed receiver wavefield would be more similar in amplitude and location compared to the source wavefield. Crosscorrelating the compensated source and receiver wavefields could improve the image resolution of reflectors \cite[]{zhang10,zhu14d}. It is also potential to implement this method in the viscoelastic full-waveform inversion with reconstructing the receiver wavefield instead of storing the receiver wavefield to possibly save the computational costs \cite[]{tarantola88,blanch95b}.
+
+Finally, numerous studies have shown that TR imaging is theoretically connected to seismic interferometry (e.g.,\citealp{derode03b};\citealp{baku06}). When attenuation is significant, due to time-variance, seismic interferometry with cross-correlation methods yields a Green’s function with incorrect traveltimes and amplitudes \cite[]{snieder07}. The principle of reconstructing the wavefield by viscoelastic TR imaging could shed light on seismic interferometry in attenuating media.
+
+\section{Conclusion}
+I have presented a viscoelastic TR imaging approach. The TR propagation equation will satisfy time-invariance by reversing the sign of both P- and S-wave loss operators while at the same time compensating for both P- and S-wave attenuation effects in the reconstructed wavefield and source. Numerical results show that my TR imaging approach is able to reconstruct the wavefield with the correct phase and amplitude at an arbitrary point in the media, and also improves the accuracy of the source location, radiation pattern and amplitude. This method might be particularly advantageous for characterizing microseismic sources and reverse-time migration. 
+
+\section{Acknowledgements}
+I would like to thank Dr. Stewart Levin, the editors J. Rickett and J. Blanch, and reviewers for their constructive comments. I also thank Jackson Distinguished Postdoc Fellowship for financial support at UT-Austin. The work is done during my Ph.D. study in the Stanford Wave Physics Lab at Stanford University. 
+
+\newpage
+\bibliographystyle{seg}
+\bibliography{TR}
+
